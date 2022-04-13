@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Biosearch{% endblock %}
+
+{% block content %}
+    <p>Voer een biosearch uit</p>
+    <form method="post">
+        <p><input type="text" name="zoekterm"></p>
+        <p><input type="submit"></p>
+    </form>
+
+   <ul>
+<!-- For loop logic of jinja template -->
+{%for i in range(0, len_results)%}
+    <li>{{result[i].replace(zoekterm, '<b>%s</b>' % zoekterm)}}</li>
+
+{%endfor%}
+
+
+
+   </ul>
+{% endblock %}
